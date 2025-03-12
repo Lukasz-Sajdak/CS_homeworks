@@ -14,7 +14,7 @@ namespace Homework1_inheritance
 
         public WaterRace() { }
 
-        public WaterRace(string _raceName, string _location, float _distance, string _waterType, float _waterTemperature, float _waterDepth) : base(_raceName, _location, _distance)
+        public WaterRace(string _raceName, string _location, float _distance, string _waterType, float _waterDepth, float _waterTemperature) : base(_raceName, _location, _distance)
         {
             waterType = _waterType;
             waterDepth = _waterDepth;

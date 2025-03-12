@@ -18,6 +18,18 @@ namespace Homework1_inheritance
 
             WaterRace waterRace = new WaterRace("Water Race", "London", 5, "fresh water", 20.5f, 22.1f);
             waterRace.WaterRaceInfo();
+
+            Running running = new Running("10km Run", "Otwock", 10, "Ground", 26.2f, true);
+            running.RunningInfo();
+
+            Cycling cycling = new Cycling("Tour de France", "France", 3498f, "Asphalt", 26.2f, "Racing Bike");
+            cycling.CyclingInfo();
+            //cycling.LandRaceInfo();
+            //cycling.RaceInfo();
+
+            Swimming swimming = new Swimming("2km Swimming", "Paris", 2, "fresh water", 20.5f, 40f , "Medley");
+            swimming.SwimmingInfo();
+
         }
     }
 }
