@@ -10,7 +10,7 @@ namespace Homework1_inheritance
     {
         protected string raceName;
         protected string location;
-        protected float distance;
+        protected float distance; //kilometers
 
         public Race() { }
 
@@ -23,8 +23,8 @@ namespace Homework1_inheritance
 
         public void RaceInfo()
         {
-            Console.WriteLine($"--->{raceName}<---\n" +
-                $"Distance: {distance}\n" +
+            Console.WriteLine($"\n--->{raceName}<---\n" +
+                $"Distance: {distance} km\n" +
                 $"Location: {location}");
         }
     }
