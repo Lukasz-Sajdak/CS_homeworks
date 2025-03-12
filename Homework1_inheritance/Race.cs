@@ -23,7 +23,7 @@ namespace Homework1_inheritance
 
         public void RaceInfo()
         {
-            Console.WriteLine($"\n--->{raceName}<---\n" +
+            Console.WriteLine($"\n---> {raceName} <---\n" +
                 $"Distance: {distance} km\n" +
                 $"Location: {location}");
         }

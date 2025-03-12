@@ -8,7 +8,7 @@ namespace Homework1_inheritance
 {
     class Swimming : WaterRace
     {
-        private string swimmingStyle;
+        protected string swimmingStyle;
 
         public Swimming () { }
 

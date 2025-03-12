@@ -26,7 +26,7 @@ namespace Homework1_inheritance
             RaceInfo();
             Console.WriteLine($"Water Type: {waterType}\n" +
                 $"Water Depth: {waterDepth} m\n" +
-                $"Temperature: {waterTemperature}\u00B0C");
+                $"Water Temperature: {waterTemperature}\u00B0C");
         }
     }
 }
