@@ -10,6 +10,8 @@ namespace Homework1_inheritance
     {
         static void Main(string[] args)
         {
+            Race ironman = new Race("IronMan", "Cracow", 225.8f);
+            ironman.RaceInfo();
         }
     }
 }
