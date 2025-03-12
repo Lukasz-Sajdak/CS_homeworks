@@ -43,8 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cycling.cs" />
+    <Compile Include="LandRace.cs" />
+    <Compile Include="OpenWaterSwimming.cs" />
+    <Compile Include="PoolSwimming.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Race.cs" />
+    <Compile Include="Running.cs" />
+    <Compile Include="Swimming.cs" />
+    <Compile Include="WaterRace.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
