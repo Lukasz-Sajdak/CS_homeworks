@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace Homework2_polymorphism
 {
-    class Computer : Robot
+    class Computer : Robot , IInternetUser
     {
-        public Computer() : base("Computer"){ }
+        public bool InternetConnection { get; private set; }
+
+        public Computer(bool _InternetConnection) : base("Computer")
+        {
+            InternetConnection = _InternetConnection;
+        }
 
         public override int AnnualCost()
         {

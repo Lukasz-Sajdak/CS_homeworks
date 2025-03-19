@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace Homework2_polymorphism
 {
-    class OfficeWorker : Human
+    class OfficeWorker : Human, IInternetUser
     {
-        public OfficeWorker():base(5000f) { }
+        public bool InternetConnection { get; private set; }
+
+        public OfficeWorker(bool _InternetConnection) :base(5000f) 
+        {
+            InternetConnection = _InternetConnection;
+        }
 
         public override float Cost(int months)
         {
-            return months * salary * 1.1f; //10% additional office maintence costs
+            return months * salary * (InternetConnection ? 1.1f : 1);
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Homework2_polymorphism
 {
-    class IInternetUser
+   interface IInternetUser
     {
         bool InternetConnection {  get; }
     }
