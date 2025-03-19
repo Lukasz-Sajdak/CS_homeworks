@@ -1,6 +1,6 @@
 # Factory Management System
 
-This project demonstrates polymorphism through a Factory Management System.
+This project demonstrates polymorphism in C# through a Factory Management System.
 
 ## Class Hierarchy  
 ![image](https://github.com/user-attachments/assets/71565479-a97c-4d81-bd78-4a5f849baffa)
