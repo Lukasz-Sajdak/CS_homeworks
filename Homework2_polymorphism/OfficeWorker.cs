@@ -10,7 +10,7 @@ namespace Homework2_polymorphism
     {
         public bool InternetConnection { get; private set; }
 
-        public OfficeWorker(bool _InternetConnection) :base(5000f) 
+        public OfficeWorker(string _name, bool _InternetConnection) :base(5000f, _name) 
         {
             InternetConnection = _InternetConnection;
         }

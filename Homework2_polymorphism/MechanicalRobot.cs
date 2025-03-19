@@ -8,7 +8,7 @@ namespace Homework2_polymorphism
 {
     class MechanicalRobot : Robot
     {
-        public MechanicalRobot() : base("Mechanical Robot") { }
+        public MechanicalRobot(string _model) : base("Mechanical Robot", _model) { }
 
         public override int AnnualCost()
         {
