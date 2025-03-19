@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Homework2_polymorphism
 {
-    class Robot
+    abstract class Robot
     {
-        protected string Type;
+        protected string type;
 
-        public int AnnualCost()
+        public Robot(string _type)
         {
-            return 0;
+            type = _type;
         }
 
+        public abstract int AnnualCost();
     }
 }

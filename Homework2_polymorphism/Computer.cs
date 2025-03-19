@@ -8,6 +8,11 @@ namespace Homework2_polymorphism
 {
     class Computer : Robot
     {
-        
+        public Computer() : base("Computer"){ }
+
+        public override int AnnualCost()
+        {
+            return 5000;
+        }
     }
 }

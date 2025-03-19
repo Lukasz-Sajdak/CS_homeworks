@@ -8,5 +8,6 @@ namespace Homework2_polymorphism
 {
     class IInternetUser
     {
+        bool InternetConnection {  get; }
     }
 }
