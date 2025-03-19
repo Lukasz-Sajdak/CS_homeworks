@@ -8,5 +8,11 @@ namespace Homework2_polymorphism
 {
     class Human
     {
+        protected float salary;
+
+        public int Cost(int months)
+        {
+            return 0;
+        }
     }
 }
