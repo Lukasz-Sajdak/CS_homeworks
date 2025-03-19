@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Homework2_polymorphism
 {
-    class Human
+    abstract class Human
     {
         protected float salary;
 
-        public int Cost(int months)
+        public Human(float _salary) 
         {
-            return 0;
+            salary = _salary;
         }
+
+        public abstract float Cost(int months);
     }
 }

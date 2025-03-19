@@ -15,6 +15,13 @@ namespace Homework2_polymorphism
 
             Console.WriteLine(r1.AnnualCost());
             Console.WriteLine(r2.AnnualCost());
+
+            Human h1 = new PhysicalWorker();
+            Human h2 = new OfficeWorker();
+
+            Console.WriteLine(h1.Cost(2));
+            Console.WriteLine(h2.Cost(3));
+
         }
     }
 }
