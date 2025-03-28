@@ -23,7 +23,7 @@ namespace Homework3
         }
         public bool CheckFuelBeforeTravel(double travelTime)
         {
-            return tank.Weight >= travelTime;
+            return tank.Weight >= travelTime/100;
         }
         public void Travel(double travelTime)
         {
