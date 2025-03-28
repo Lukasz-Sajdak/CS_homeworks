@@ -59,6 +59,8 @@ namespace Homework2_polymorphism
                 else if (internetUser is Robot robot)
                     Console.WriteLine($"- {robot.Model}: {(internetUser.InternetConnection ? "Connected" : "No connection")}");
             }
+
+            Console.ReadKey();
         }
     }
 }
