@@ -20,7 +20,11 @@ namespace Homework3
 
         public void Work(double time)
         {
-
+            if (time >= 24) 
+            {
+                equipment.Weight = 0;
+                equipment.Volume = 0;
+            }
         }
     }
 }

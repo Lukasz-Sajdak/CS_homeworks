@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Homework3
 {
-    internal class Crewman : Human
+    class Waste
     {
     }
 }

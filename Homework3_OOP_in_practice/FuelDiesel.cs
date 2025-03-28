@@ -8,7 +8,30 @@ namespace Homework3
 {
     internal class FuelDiesel : Fuel
     {
-        public FuelDiesel(string _type, double _density, double _maxCapacity, Fuel _fuel)
-            :base(_type, _density, _maxCapacity, _fuel) { }
+        protected double volume, weight;
+        public double Volume
+        {
+            get { return volume; }
+            set
+            {
+                volume = value;
+                weight = value * 7.0;
+            }
+        }
+        public double Weight
+        {
+            get { return weight; }
+            set
+            {
+                weight = value;
+                volume = value / 7.0;
+            }
+        }
+        public override string Type { get { return "diesel"; } }
+
+        public override string GetType()
+        {
+            return Type;
+        }
     }
 }

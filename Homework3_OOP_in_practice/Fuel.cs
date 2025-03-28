@@ -6,18 +6,32 @@ using System.Threading.Tasks;
 
 namespace Homework3
 {
-    internal abstract class Fuel : FuelTank, ITransportable
+    internal abstract class Fuel : ITransportable
     {
-        public string Type { get; }
-        protected double density;
+        public abstract string Type { get; }
+        protected double density { get; private set; }
 
-        public Fuel(string _type, double _density, double _maxCapacity, Fuel fuel)
-            :base(_maxCapacity, fuel)
+        protected double volume, weight;
+        public double Volume
         {
-            Type = _type;
-            density = _density;
+            get { return volume; }
+            set
+            {
+                volume = value;
+                weight = value * density;
+            }
+        }
+        public double Weight
+        {
+            get { return weight; }
+            set
+            {
+                weight = value;
+                volume = value / density;
+            }
         }
 
+        public abstract string GetType();
 
     }
 }
