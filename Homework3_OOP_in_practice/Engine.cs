@@ -23,15 +23,14 @@ namespace Homework3
         }
         public bool CheckFuelBeforeTravel(double travelTime)
         {
-            if (tank.Weight == 0)
-                return false;
-            else 
-                return true;
+            return tank.Weight >= travelTime;
         }
         public void Travel(double travelTime)
         {
-            tank.Weight -= travelTime;
-            waste.Weight += travelTime;
+            double fuelUsed = Math.Min(tank.Weight, travelTime);
+
+            tank.Weight -= fuelUsed;
+            waste.Weight += fuelUsed;
         }
     }
 }

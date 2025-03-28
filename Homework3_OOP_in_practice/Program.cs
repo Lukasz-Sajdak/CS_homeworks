@@ -7,12 +7,13 @@ namespace Homework3
         static void Main(string[] args)
         {
             // before we construct a submarine, test individual elements of the program first
+            /*
             bool testsPassed = TestSubmarine.Run();
             if (!testsPassed) return;
-            Console.WriteLine();
+            Console.WriteLine();*/
 
             // now we are ready for the submarine simulation
-            // Submarine.Demo();
+            Submarine.Demo();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,15 +21,29 @@ namespace Homework3
             waste = _waste;
             crew = _crew;
         }
-        public bool CheckSuppliesBeforeTravel(double timeTravel) { 
-            if(oxygenBottles.Count == 0 || foodContainer.Weight == 0) return false;
-            return true;
+        public bool CheckSuppliesBeforeTravel(double timeTravel) {
+
+            double oxygenNeeded = crew.Count * timeTravel;
+            double foodNeeded = crew.Count * timeTravel;
+            double totalOxygenAvailable = oxygenBottles.Sum(bottle => bottle.Weight);
+
+            return totalOxygenAvailable >= oxygenNeeded &&
+                   foodContainer.Weight >= foodNeeded;
+
         }
         public void Run(double timeTravel) 
-        {   
-            foreach (OxygenBottle bottle in oxygenBottles) { bottle.Weight -= crew.Count * timeTravel; }
-            foodContainer.Weight -= crew.Count * timeTravel;
-            waste.Weight += crew.Count * timeTravel;
+        {
+            double totalOxygenNeeded = crew.Count * timeTravel;
+            double totalFoodNeeded = crew.Count * timeTravel;
+
+            foreach (OxygenBottle bottle in oxygenBottles) 
+            {
+                double consumed = Math.Min(bottle.Weight, totalOxygenNeeded);
+                bottle.Weight -= consumed;
+                totalOxygenNeeded -= consumed;
+            }
+            foodContainer.Weight = Math.Max(0, foodContainer.Weight - totalFoodNeeded);
+            waste.Weight += totalFoodNeeded;
         }
     }
 }

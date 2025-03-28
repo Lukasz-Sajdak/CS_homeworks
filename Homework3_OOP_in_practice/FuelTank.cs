@@ -44,7 +44,12 @@ namespace Homework3
 
         public double VisitPort()
         {
-            return 0;
+            double refillAmount = MaxCapacity - Volume;
+            Volume = MaxCapacity;
+            if (fuel.Type == "diesel")
+                return refillAmount * 10;
+            else
+                return refillAmount * 15;
         }
     }
 }

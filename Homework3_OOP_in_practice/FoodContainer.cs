@@ -39,7 +39,7 @@ namespace Homework3
         {
             double refillAmount = MaxCapacity - Volume;
             Volume = MaxCapacity;
-            return refillAmount * 2;
+            return refillAmount * 5;
         }
     }
 }

@@ -29,13 +29,15 @@ namespace Homework3
             }
         }
 
-        public OxygenBottle(double maxCapacity)
+        public OxygenBottle(double _maxCapacity)
         {
-            this.MaxCapacity = maxCapacity;
+            MaxCapacity = _maxCapacity;
         }
         public double VisitPort()
         {
-            return 0;
+            double refillAmount = MaxCapacity - Volume;
+            Volume = MaxCapacity;
+            return refillAmount * 50;
         }
     }
 }

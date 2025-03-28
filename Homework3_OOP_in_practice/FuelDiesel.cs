@@ -27,7 +27,10 @@ namespace Homework3
                 volume = value / 7.0;
             }
         }
-        public override string Type { get { return "diesel"; } }
+        public override string Type 
+        { 
+            get { return "diesel"; } 
+        }
 
         public override string GetType()
         {

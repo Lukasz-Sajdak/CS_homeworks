@@ -16,7 +16,7 @@ namespace Homework3
             set
             {
                 volume = value;
-                weight = value * 7.0; // assume density equal to 7000 kg/m^3 (arbitrary number)
+                weight = value * 7.0;
             }
         }
         public double Weight
@@ -25,7 +25,7 @@ namespace Homework3
             set
             {
                 weight = value;
-                volume = value / 7.0; // assume density equal to 7000 kg/m^3 (arbitrary number)
+                volume = value / 7.0;
             }
         }
         public override string Type 

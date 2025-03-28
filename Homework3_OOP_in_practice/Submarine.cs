@@ -5,9 +5,7 @@ using System.Text;
 namespace Homework3
 {
     class Submarine
-    {
-		/*
-		
+    {	
         // this is the actual submarine simulation
         public static void Demo()
         {
@@ -92,7 +90,5 @@ namespace Homework3
                 // now repeat for a different travel option
             } 
         }
-
-		*/
     }
 }
