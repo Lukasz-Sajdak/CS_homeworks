@@ -6,5 +6,6 @@ This project is an extension of the UML diagram for Homework 1
 
 
 ## Features
-- Implements a structured class hierarchy following the UML design.
+- Designed based on a structured UML class diagram.
 - Demonstrates OOP principles: **encapsulation**, **inheritance**, **abstraction**, and **polymorphism**.
+- Contains over 15 classes and more than 10 defined relationships.
