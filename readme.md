@@ -5,6 +5,8 @@ This repository contains my C# homework assignments for the course **"Designing 
 ## Contains  
 - **Homework 1** – Inheritance (triathlon-inspired race hierarchy)
 - **Homework 2** – Polymorphism (Factory Management System)
+- **Homework 3** - Submarine Project - UML-Based Implementation
+- **Homework 4** - extended UML for *Homework 1** 
 
 ## How to Use  
 Each assignment is organized into separate folders. Simply navigate to the desired task, compile the code, and run it in a C# environment.  
