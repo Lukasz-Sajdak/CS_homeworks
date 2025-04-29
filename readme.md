@@ -7,6 +7,8 @@ This repository contains my C# homework assignments for the course **"Designing 
 - **Homework 2** – Polymorphism (Factory Management System)
 - **Homework 3** - Submarine Project - UML-Based Implementation
 - **Homework 4** - extended UML for **Homework 1**
+- **Homework 5** - Abstract Factory (Interior Designer)
+- **Homework 6** - Strategy (Prisoner's Dilemma)
 
 ## How to Use  
 Each assignment is organized into separate folders. Simply navigate to the desired task, compile the code, and run it in a C# environment.  
