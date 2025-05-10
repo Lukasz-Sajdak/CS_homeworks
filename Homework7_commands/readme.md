@@ -1,5 +1,5 @@
 
-#Tourist Trip Planner
+# Tourist Trip Planner
 
 ## Overview
 This C# project demonstrates the **Command Design Pattern** by simulating a tourist trip planning system. The system allows you to schedule and execute various tourist activities in a city, such as visiting museums, eating at restaurants, taking walks in parks, and shopping for souvenirs.
