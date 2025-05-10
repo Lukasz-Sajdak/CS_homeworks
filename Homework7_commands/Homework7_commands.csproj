@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AC96374C-6929-4093-AEA7-2E848D10ADDC}</ProjectGuid>
+    <ProjectGuid>{5FBA384D-B67F-418E-B84D-4D2CB0B72180}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Homework6_strategy</RootNamespace>
-    <AssemblyName>Homework6_strategy</AssemblyName>
+    <RootNamespace>Homework7_commands</RootNamespace>
+    <AssemblyName>Homework7_commands</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,17 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="Commands.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Strategy.cs" />
-    <Compile Include="StrategyAlwaysFlase.cs" />
-    <Compile Include="StrategyAlwaysTrue.cs" />
-    <Compile Include="StrategyDetective.cs" />
-    <Compile Include="StrategyFollower.cs" />
-    <Compile Include="StrategyGrudger.cs" />
-    <Compile Include="StrategyRandom.cs" />
+    <Compile Include="Receivers.cs" />
+    <Compile Include="TripScheduler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

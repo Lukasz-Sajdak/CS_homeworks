@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Homework6_strategy
 {
@@ -8,57 +7,101 @@ namespace Homework6_strategy
     {
         public static void Run()
         {
-            int rounds = 30; // how many rounds
-            int score1 = 10; // both players cooperate
-            int score2 = 15; // one player betrays - winner
-            int score3 = -10; // one player betrays - loser
-            int score4 = 0; // both players betray
-            // note: it can be shown mathematically that this game is non-trivial if: 
-            // 1) score2 > score1 > score4 > score3, AND
-            // 2) 2*score1 > score2 + score3
+            int rounds = 30;
+            int score1 = 10;
+            int score2 = 15;
+            int score3 = -10;
+            int score4 = 0;
 
-
-            Player p1 = new Player(new StrategyAlwaysTrue());
-            Player p2 = new Player(new StrategyAlwaysTrue());
-            for (int i = 0; i < rounds; i++)
+            var strategies = new List<(string Name, IStrategy Strategy)>
             {
-                bool move1 = p1.GetNextMove();
-                bool move2 = p2.GetNextMove();
+                ("AlwaysTrue", new StrategyAlwaysTrue()),
+                ("AlwaysFalse", new StrategyAlwaysFalse()),
+                ("Follower", new StrategyFollower()),
+                ("Grudger", new StrategyGrudger()),
+                ("Random", new StrategyRandom()),
+                ("Detective", new StrategyDetective())
+            };
 
-                if (move1 && move2) // both players cooperated
+            int n = strategies.Count;
+            int[,] scores = new int[n, n];
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
                 {
-                    // update score
-                    p1.Score += score1;
-                    p2.Score += score1;
-                    // update players' knowledge about their partner
-                    p1.PartnerMoves.Add(true);
-                    p2.PartnerMoves.Add(true);
-                }
-                else if (move1) // player2 betrayed player1
-                {
-                    p1.Score += score3;
-                    p2.Score += score2;
-                    p1.PartnerMoves.Add(false);
-                    p2.PartnerMoves.Add(true);
-                }
-                else if (move2) // player1 betrayed player2
-                {
-                    p1.Score += score2;
-                    p2.Score += score3;
-                    p1.PartnerMoves.Add(true);
-                    p2.PartnerMoves.Add(false);
-                }
-                else // both players betrayed
-                {
-                    p1.Score += score4;
-                    p2.Score += score4;
-                    p1.PartnerMoves.Add(false);
-                    p2.PartnerMoves.Add(false);
+                    var p1 = new Player(CloneStrategy(strategies[i].Strategy));
+                    var p2 = new Player(CloneStrategy(strategies[j].Strategy));
+
+                    for (int r = 0; r < rounds; r++)
+                    {
+                        bool move1 = p1.GetNextMove();
+                        bool move2 = p2.GetNextMove();
+
+                        if (move1 && move2)
+                        {
+                            p1.Score += score1;
+                            p2.Score += score1;
+                        }
+                        else if (move1)
+                        {
+                            p1.Score += score3;
+                            p2.Score += score2;
+                        }
+                        else if (move2)
+                        {
+                            p1.Score += score2;
+                            p2.Score += score3;
+                        }
+                        else
+                        {
+                            p1.Score += score4;
+                            p2.Score += score4;
+                        }
+
+                        p1.PartnerMoves.Add(move2);
+                        p2.PartnerMoves.Add(move1);
+                    }
+
+                    scores[i, j] = p1.Score;
                 }
             }
 
-            Console.WriteLine("Player1 score: " + p1.Score);
-            Console.WriteLine("Player2 score: " + p2.Score);
+            int columnWidth = 12;
+
+            Console.Write("".PadRight(columnWidth));
+            for (int i = 0; i < n; i++)
+                Console.Write(strategies[i].Name.PadRight(columnWidth));
+            Console.WriteLine();
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(strategies[i].Name.PadRight(columnWidth));
+                for (int j = 0; j < n; j++)
+                {
+                    string value = scores[i, j].ToString();
+                    Console.Write(value.PadRight(columnWidth));
+                }
+                Console.WriteLine();
+            }
+        }
+
+        private static IStrategy CloneStrategy(IStrategy strategy)
+        {
+            if (strategy is StrategyAlwaysTrue)
+                return new StrategyAlwaysTrue();
+            if (strategy is StrategyAlwaysFalse)
+                return new StrategyAlwaysFalse();
+            if (strategy is StrategyFollower)
+                return new StrategyFollower();
+            if (strategy is StrategyGrudger)
+                return new StrategyGrudger();
+            if (strategy is StrategyRandom)
+                return new StrategyRandom();
+            if (strategy is StrategyDetective)
+                return new StrategyDetective();
+
+            throw new NotImplementedException("Unknown strategy.");
         }
     }
 }
